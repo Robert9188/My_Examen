@@ -37,7 +37,7 @@ action = st.sidebar.radio("Sélection d’action", [
     "Scraper les données",
     "Charger depuis fichier CSV",
     "Visualiser le tableau de bord",
-    "Évaluer un bien"
+    "Evaluation"
 ])
 
 def afficher_telechargement(df, nom_fichier, titre):
@@ -139,7 +139,8 @@ elif action == "Visualiser le tableau de bord":
     except Exception as e:
         st.error(f"Erreur lors du chargement : {e}")
 
-elif action == "Évaluer un bien":
-    st.subheader("📝 Formulaire d’évaluation (à venir)")
-    st.info("Cette fonctionnalité sera ajoutée dans une version future.")
-
+elif action == "Evaluation":
+    st.subheader("📝 Formulaire d’évaluation ")
+    st.markdown("""
+        <iframe src="https://ee.kobotoolbox.org/x/yyth6V0T" width="100%" height="700" style="border:none;"></iframe>
+    """, unsafe_allow_html=True)
