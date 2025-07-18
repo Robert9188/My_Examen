@@ -106,9 +106,9 @@ elif action == "Charger depuis fichier CSV":
     tabs = st.tabs(["🏠 Villas", "🌍 Terrains", "🏢 Appartements"])
 
     fichiers = {
-        "Villas": "data/Scrapper_villas.csv",
-        "Terrains": "data/Scrapper_Terrains.csv",
-        "Appartements": "data/Scrapper_Appartements.csv"
+        "Villas": "donneeWeb/Scrapper_villas.csv",
+        "Terrains": "donneeWeb/Scrapper_Terrains.csv",
+        "Appartements": "donneeWeb/Scrapper_Appartements.csv"
     }
 
     for i, bien in enumerate(["Villas", "Terrains", "Appartements"]):
@@ -125,15 +125,15 @@ elif action == "Visualiser le tableau de bord":
 
     try:
         with onglets[0]:
-            df_v = pd.read_csv("data/Scrapper_villas.csv")
+            df_v = pd.read_csv("donneeWeb/Scrapper_villas.csv")
             afficher_dashboard(dash_traiter_villas(df_v), "Villas")
 
         with onglets[1]:
-            df_t = pd.read_csv("data/Scrapper_Terrains.csv")
+            df_t = pd.read_csv("donneeWeb/Scrapper_Terrains.csv")
             afficher_dashboard(dash_traiter_terrains(df_t), "Terrains")
 
         with onglets[2]:
-            df_a = pd.read_csv("data/Scrapper_Appartements.csv")
+            df_a = pd.read_csv("donneeWeb/Scrapper_Appartements.csv")
             afficher_dashboard(dash_traiter_apparts(df_a), "Appartements")
 
     except Exception as e:
